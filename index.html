@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restyle — Legal</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 34rem; margin: 0 auto; padding: 5rem 1.25rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a; background: #fff;
+  }
+  h1 { font-size: 2rem; margin-bottom: .2rem; }
+  .tagline { color: #6b6b7b; margin-top: 0; }
+  a { color: #6B7F5E; }
+  a.card {
+    display: block; padding: 1rem 1.15rem; margin: .75rem 0;
+    border: 1px solid #e2e2e2; border-radius: 10px;
+    text-decoration: none; color: inherit; transition: border-color .15s;
+  }
+  a.card:hover { border-color: #6B7F5E; }
+  a.card strong { color: #6B7F5E; display: block; }
+  a.card span { color: #6b6b7b; font-size: .9rem; }
+  hr { border: 0; border-top: 1px solid #e2e2e2; margin: 2.5rem 0 1.25rem; }
+  footer { font-size: .875rem; color: #6b6b7b; }
+
+  /* Dark-mode overrides must come last so they win over the base rules above. */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #14141c; }
+    a { color: #9CB08B; }
+    a.card { background: #1e1e2e; border-color: #2e2e42; }
+    a.card:hover { border-color: #9CB08B; }
+    a.card strong { color: #9CB08B; }
+    hr { border-color: #2e2e42; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Restyle</h1>
+<p class="tagline">AI Interior Design</p>
+
+<p>Legal documents for the Restyle mobile app.</p>
+
+<a class="card" href="./privacy-policy.html">
+  <strong>Privacy Policy</strong>
+  <span>What we collect, who processes it, and how to control or delete it.</span>
+</a>
+
+<hr>
+<footer>
+  <p>Restyle is published by NGN Consulting Corp., Chicago, Illinois.<br>
+  Questions: <a href="mailto:ngn.consulting.corp@gmail.com">ngn.consulting.corp@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
