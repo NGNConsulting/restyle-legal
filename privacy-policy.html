@@ -38,14 +38,17 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Restyle: Interior Design Shop &middot; Last updated 10 September 2026</p>
+<p class="meta">Restyle: Interior Design Shop &middot; Last updated 24 September 2026</p>
 
 <p>Restyle (&ldquo;the app&rdquo;) is operated by <strong>NGN Consulting Corp.</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy
 explains what we collect, why, who we share it with, and how long we keep it, in plain language.</p>
 
-<p>Restyle is built to keep your room photos and design history on your device by default. The one
-exception &mdash; sending a photo to our AI rendering partner &mdash; only happens if you turn on cloud
-rendering yourself. Everything below explains exactly when that line gets crossed.</p>
+<p>Restyle can redesign your room two ways: fully on your device, where your photo never leaves your
+phone, or using real AI cloud rendering. Cloud rendering runs one of two ways &mdash; through
+<strong>Restyle&rsquo;s own AI service</strong> (paid for out of the credits or subscription you already have in
+the app, no setup required), or through <strong>your own Replicate account</strong> if you add an API key in
+Settings, an advanced option for users who prefer that. Everything below explains exactly what happens
+under each option.</p>
 
 <h2>1. Information we collect</h2>
 
@@ -54,7 +57,7 @@ rendering yourself. Everything below explains exactly when that line gets crosse
   <tr>
     <td><strong>Room photos</strong> you snap or upload</td>
     <td>To generate your redesign</td>
-    <td>Only if you enable cloud rendering &mdash; see &ldquo;Cloud rendering is opt-in&rdquo; below</td>
+    <td>Only if you use cloud rendering &mdash; see &ldquo;How cloud rendering works&rdquo; below</td>
   </tr>
   <tr>
     <td><strong>Design history</strong> (generated images, room type, style, and any notes you typed)</td>
@@ -76,6 +79,13 @@ rendering yourself. Everything below explains exactly when that line gets crosse
     <td>To authenticate your own cloud-rendering requests</td>
     <td>Sent only to Replicate, only as part of a render request you initiate</td>
   </tr>
+  <tr>
+    <td><strong>An anonymous installation identifier</strong> &mdash; a random id generated on your device,
+    not tied to your name or any personal information</td>
+    <td>To apply your credits/subscription to app-provided cloud renders and prevent abuse, without
+    requiring an account</td>
+    <td>Yes &mdash; sent to Restyle&rsquo;s own backend with each app-provided cloud-rendering request</td>
+  </tr>
 </table>
 
 <p><strong>We do not collect:</strong> your name, email, location, contacts, or any device identifier for
@@ -88,30 +98,52 @@ you tap &ldquo;Camera&rdquo; in the app, it hands off to your phone&rsquo;s own 
 photo file to Restyle after you take it. We never see anything the camera captures beyond that one
 photo you chose to keep.</p>
 
-<h2>2. Cloud rendering is opt-in</h2>
-<p>By default, Restyle generates redesigns entirely on your device using a built-in style engine. Your
-room photo never leaves your phone in this mode.</p>
-<p>If you paste your own Replicate API token into Settings, Restyle switches to cloud rendering: the
-photo for that specific design, along with your chosen style and any text you typed, is sent to
-<strong>Replicate</strong> (a third-party AI hosting service you are choosing to use with your own account)
-to generate a higher-fidelity result. This only happens for designs you create after adding a token,
-and only while a token is present. Remove the token in Settings at any time to go back to on-device
-rendering.</p>
+<h2>2. How cloud rendering works</h2>
+<p>When cloud rendering isn&rsquo;t available at all (for example, no network connection), Restyle falls
+back to generating redesigns entirely on your device using a built-in style engine &mdash; your room
+photo never leaves your phone in that mode.</p>
+
+<h3>Restyle&rsquo;s own AI service (default)</h3>
+<p>By default, real AI redesigns run through <strong>Restyle&rsquo;s own backend</strong>, which we operate and
+host with a third-party hosting provider. The photo for that specific design, your chosen style, any
+text you typed, and your anonymous installation identifier are sent to our backend, which generates
+the redesign (using Replicate, an AI hosting service, under Restyle&rsquo;s own account &mdash; not yours) and
+returns the finished image to the app. This is paid for out of the free renders, credit packs, or
+subscription you already have in Restyle &mdash; there&rsquo;s nothing extra to set up. Our backend does not
+store your photo: it&rsquo;s held in memory only long enough to generate that one design, then discarded.</p>
+
+<h3>Your own Replicate account (advanced, optional)</h3>
+<p>If you&rsquo;d rather use your own Replicate account instead, you can paste your own Replicate API token
+into Settings. Once a token is present, Restyle sends the photo for that specific design, your chosen
+style, and any text you typed <strong>directly to Replicate</strong> using your own account, bypassing our
+backend entirely. Remove the token in Settings at any time to go back to Restyle&rsquo;s own AI service.</p>
 <div class="note">
-  <strong>Your Replicate account, your data relationship.</strong> When cloud rendering is on, you are
-  also subject to Replicate&rsquo;s own privacy policy and terms for the images you send through your
-  token. We don&rsquo;t control how Replicate or the underlying model provider it routes to retains that
-  data &mdash; check Replicate&rsquo;s policy if that matters to you.
+  <strong>Your Replicate account, your data relationship.</strong> When you use your own token, you are
+  subject to Replicate&rsquo;s own privacy policy and terms for the images you send through it. We don&rsquo;t
+  control how Replicate or the underlying model provider it routes to retains that data &mdash; check
+  Replicate&rsquo;s policy if that matters to you.
 </div>
 
 <h2>3. Who we share it with</h2>
 <table>
   <tr><th>Provider</th><th>What it receives</th><th>Purpose</th></tr>
   <tr>
+    <td><strong>Restyle&rsquo;s own backend</strong> (and its hosting provider)</td>
+    <td>A room photo, style choice, text prompt, and your anonymous installation identifier &mdash; only
+    for a design you generate using Restyle&rsquo;s own AI service (the default cloud option)</td>
+    <td>Runs your AI redesign request, then forwards it to Replicate under Restyle&rsquo;s own account</td>
+  </tr>
+  <tr>
     <td><strong>Replicate</strong></td>
-    <td>A room photo, style choice, and text prompt &mdash; only for a design you generate while cloud
-    rendering is on</td>
+    <td>A room photo, style choice, and text prompt &mdash; either from Restyle&rsquo;s backend (default) or
+    directly from the app if you&rsquo;ve added your own Replicate token</td>
     <td>AI image generation</td>
+  </tr>
+  <tr>
+    <td><strong>RevenueCat</strong></td>
+    <td>Purchase/subscription event data (which product was purchased, and your anonymous installation
+    identifier) &mdash; no payment details</td>
+    <td>Confirms your purchase so credits/subscription apply correctly to Restyle&rsquo;s own AI service</td>
   </tr>
   <tr>
     <td><strong>Google Play Billing</strong></td>
@@ -135,27 +167,39 @@ it.</p>
   <tr><th>Data</th><th>Retention</th></tr>
   <tr><td>Room photos, design history, saved items, taste preferences, credits, Replicate token</td>
       <td>Kept on your device until you delete a design in the app or uninstall Restyle</td></tr>
-  <tr><td>Photos sent to Replicate for a cloud render</td>
+  <tr><td>Photos sent to Restyle&rsquo;s backend for its own AI service</td>
+      <td>Not stored &mdash; held in memory only for the seconds it takes to generate that one design, then
+      discarded. Retention on Replicate&rsquo;s side (which our backend forwards to) is governed by
+      Replicate&rsquo;s own policy</td></tr>
+  <tr><td>Photos sent directly to Replicate (your own token)</td>
       <td>Not retained by us at all &mdash; retention on Replicate&rsquo;s side is governed by Replicate&rsquo;s own
       policy, not ours</td></tr>
+  <tr><td>Anonymous installation identifier and its credit/subscription balance</td>
+      <td>Kept on our backend for as long as you use Restyle&rsquo;s own AI service, so your balance persists
+      between app sessions; not linked to your name or any personal information. Uninstalling the app
+      does not delete this balance automatically today &mdash; email us to have it removed</td></tr>
   <tr><td>Purchase/subscription records</td>
-      <td>Held by Google Play under Google&rsquo;s own retention policy; we do not separately store your
+      <td>Held by Google Play under Google&rsquo;s own retention policy; RevenueCat retains purchase-event
+      records under its own policy to keep that balance accurate; we do not separately store your
       payment history</td></tr>
 </table>
-<p>Because Restyle has no account and no server-side database of your content, there is nothing for us
-to delete on request &mdash; <strong>uninstalling the app permanently deletes all of your design history,
-saved items, and settings.</strong> You can also delete individual designs from within the app at any
-time (open a design and use the delete option), which removes that design and its shopping bookmarks
-immediately.</p>
+<p>Restyle has no account and no server-side database of your <em>content</em> &mdash; your photos and
+designs &mdash; so there&rsquo;s nothing for us to delete there on request: <strong>uninstalling the app
+permanently deletes all of your design history, saved items, and settings.</strong> You can also delete
+individual designs from within the app at any time (open a design and use the delete option), which
+removes that design and its shopping bookmarks immediately. The one thing that does live on our
+backend is your anonymous installation identifier and its credit/subscription balance (see the table
+above) &mdash; email us if you&rsquo;d like that removed.</p>
 <p>To manage or cancel a subscription, or to review your purchase history, use Google Play&rsquo;s own
 subscription management (Play Store app &rarr; Menu &rarr; Payments &amp; subscriptions).</p>
 
 <h2>5. Security</h2>
 <p>Your design history and settings are stored in the app&rsquo;s private storage area, which Android
-isolates from other apps by default. Any request Restyle makes &mdash; to Replicate for a cloud render, or
-to a retailer&rsquo;s shop link &mdash; travels over HTTPS (encrypted in transit). No system is perfectly
-secure, but Restyle keeps its attack surface small on purpose: no account to compromise, no server of
-ours holding your photos.</p>
+isolates from other apps by default. Any request Restyle makes &mdash; to our own backend, to Replicate for
+a cloud render, or to a retailer&rsquo;s shop link &mdash; travels over HTTPS (encrypted in transit). No system
+is perfectly secure, but Restyle keeps its attack surface small on purpose: no account to compromise,
+and our own backend never stores your photos &mdash; it only ever holds one in memory for the moment it
+takes to generate that design.</p>
 
 <h2>6. Children</h2>
 <p>Restyle is not intended for anyone under 13, and is not directed at children. We do not knowingly
@@ -163,16 +207,17 @@ collect information from children. Because the app has no account system, we hav
 collect anything from a child in the first place.</p>
 
 <h2>7. International users</h2>
-<p>We operate from the United States. If you enable cloud rendering, your photo is processed by
-Replicate&rsquo;s infrastructure, which may be located outside your country. If you use Restyle from
-outside the US, be aware that data you choose to send off-device may be processed in the US or
-elsewhere, where data protection law may differ from your own.</p>
+<p>We operate from the United States. If you use cloud rendering, your photo is processed by our
+backend and/or Replicate&rsquo;s infrastructure, which may be located outside your country. If you use
+Restyle from outside the US, be aware that data you choose to send off-device may be processed in the
+US or elsewhere, where data protection law may differ from your own.</p>
 
 <h2>8. Your rights</h2>
 <p>Depending on where you live, you may have rights to access, correct, delete, or export data about
-you. For Restyle, that data lives on your device and is already fully under your control through the
-app itself and your device settings. If you have a question we haven&rsquo;t answered here, email us at the
-address below and we will help.</p>
+you. Almost all of Restyle&rsquo;s data lives on your device and is already fully under your control through
+the app itself and your device settings; the only exception is the anonymous installation identifier
+and credit/subscription balance described above, which you can ask us to delete by email. If you have
+a question we haven&rsquo;t answered here, email us at the address below and we will help.</p>
 
 <h2>9. Changes to this policy</h2>
 <p>If we change this policy materially, we will update the date at the top. Continuing to use Restyle
