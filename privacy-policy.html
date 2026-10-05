@@ -38,7 +38,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Restyle: Interior Design Shop &middot; Last updated 24 September 2026</p>
+<p class="meta">Restyle: Interior Design Shop &middot; Last updated 5 October 2026</p>
 
 <p>Restyle (&ldquo;the app&rdquo;) is operated by <strong>NGN Consulting Corp.</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy
 explains what we collect, why, who we share it with, and how long we keep it, in plain language.</p>
@@ -86,6 +86,13 @@ under each option.</p>
     requiring an account</td>
     <td>Yes &mdash; sent to Restyle&rsquo;s own backend with each app-provided cloud-rendering request</td>
   </tr>
+  <tr>
+    <td><strong>Reports you choose to send</strong> &mdash; if you flag an AI-generated design, the reason you
+    pick, any details you type, and that design&rsquo;s room type, style, and text prompt</td>
+    <td>To review AI output that users find offensive and improve our content filtering</td>
+    <td>Yes &mdash; sent to Restyle&rsquo;s own backend, only when you send a report. Your photo and the
+    generated image are never included</td>
+  </tr>
 </table>
 
 <p><strong>We do not collect:</strong> your name, email, location, contacts, or any device identifier for
@@ -111,6 +118,13 @@ the redesign (using Replicate, an AI hosting service, under Restyle&rsquo;s own 
 returns the finished image to the app. This is paid for out of the free renders, credit packs, or
 subscription you already have in Restyle &mdash; there&rsquo;s nothing extra to set up. Our backend does not
 store your photo: it&rsquo;s held in memory only long enough to generate that one design, then discarded.</p>
+<p>The first time the app contacts our backend, it also sends a one-time Google Play Integrity check
+&mdash; a token from Google Play services confirming the request comes from the genuine Restyle app
+installed from Google Play on a real device. Our backend passes it to Google to verify and uses the
+result only to decide whether the new installation receives the free starting renders, which stops
+people from claiming them over and over with fake installs. Google processes this check under its own
+<a href="https://developer.android.com/google/play/integrity/terms">Play Integrity terms</a>; we do not
+store the token or anything Google returns about your device.</p>
 
 <h3>Your own Replicate account (advanced, optional)</h3>
 <p>If you&rsquo;d rather use your own Replicate account instead, you can paste your own Replicate API token
@@ -130,8 +144,10 @@ backend entirely. Remove the token in Settings at any time to go back to Restyle
   <tr>
     <td><strong>Restyle&rsquo;s own backend</strong> (and its hosting provider)</td>
     <td>A room photo, style choice, text prompt, and your anonymous installation identifier &mdash; only
-    for a design you generate using Restyle&rsquo;s own AI service (the default cloud option)</td>
-    <td>Runs your AI redesign request, then forwards it to Replicate under Restyle&rsquo;s own account</td>
+    for a design you generate using Restyle&rsquo;s own AI service (the default cloud option). Also any
+    report you choose to send about a design (no photo or image)</td>
+    <td>Runs your AI redesign request, then forwards it to Replicate under Restyle&rsquo;s own account;
+    stores reports so we can review flagged AI output</td>
   </tr>
   <tr>
     <td><strong>Replicate</strong></td>
@@ -144,6 +160,13 @@ backend entirely. Remove the token in Settings at any time to go back to Restyle
     <td>Purchase/subscription event data (which product was purchased, and your anonymous installation
     identifier) &mdash; no payment details</td>
     <td>Confirms your purchase so credits/subscription apply correctly to Restyle&rsquo;s own AI service</td>
+  </tr>
+  <tr>
+    <td><strong>Google (Play Integrity)</strong></td>
+    <td>A one-time integrity token from Google Play services on your device, the first time the app
+    contacts our backend</td>
+    <td>Confirming the request comes from the genuine app on a real device, to stop abuse of the free
+    starting renders</td>
   </tr>
   <tr>
     <td><strong>Google Play Billing</strong></td>
@@ -178,6 +201,9 @@ it.</p>
       <td>Kept on our backend for as long as you use Restyle&rsquo;s own AI service, so your balance persists
       between app sessions; not linked to your name or any personal information. Uninstalling the app
       does not delete this balance automatically today &mdash; email us to have it removed</td></tr>
+  <tr><td>Reports you send about a design</td>
+      <td>Kept on our backend while we review them and use them to improve content filtering; linked
+      only to your anonymous installation identifier. Email us to have your reports removed</td></tr>
   <tr><td>Purchase/subscription records</td>
       <td>Held by Google Play under Google&rsquo;s own retention policy; RevenueCat retains purchase-event
       records under its own policy to keep that balance accurate; we do not separately store your
