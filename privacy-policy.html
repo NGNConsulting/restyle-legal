@@ -38,7 +38,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Restyle: Interior Design Shop &middot; Last updated 5 October 2026</p>
+<p class="meta">Restyle: Interior Design Shop &middot; Last updated 6 October 2026</p>
 
 <p>Restyle (&ldquo;the app&rdquo;) is operated by <strong>NGN Consulting Corp.</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy
 explains what we collect, why, who we share it with, and how long we keep it, in plain language.</p>
@@ -55,7 +55,8 @@ under each option.</p>
 <table>
   <tr><th>What</th><th>Why we need it</th><th>Leaves your device?</th></tr>
   <tr>
-    <td><strong>Room photos</strong> you snap or upload</td>
+    <td><strong>Room photos</strong> you snap or upload, and any <strong>sample photos</strong> of flooring,
+    window treatments, or rugs you add to a design</td>
     <td>To generate your redesign</td>
     <td>Only if you use cloud rendering &mdash; see &ldquo;How cloud rendering works&rdquo; below</td>
   </tr>
@@ -113,11 +114,15 @@ photo never leaves your phone in that mode.</p>
 <h3>Restyle&rsquo;s own AI service (default)</h3>
 <p>By default, real AI redesigns run through <strong>Restyle&rsquo;s own backend</strong>, which we operate and
 host with a third-party hosting provider. The photo for that specific design, your chosen style, any
-text you typed, and your anonymous installation identifier are sent to our backend, which generates
-the redesign (using Replicate, an AI hosting service, under Restyle&rsquo;s own account &mdash; not yours) and
-returns the finished image to the app. This is paid for out of the free renders, credit packs, or
+text you typed, any sample photos you added (flooring, window treatment, or rug), and your anonymous
+installation identifier are sent to our backend, which generates the redesign using Replicate, an AI
+hosting service, under Restyle&rsquo;s own account &mdash; not yours. Replicate runs the AI image model, which is
+currently <strong>Google&rsquo;s Gemini image model</strong>, so Google also processes that photo, your sample
+photos, and your design instructions to create the image. The finished image is returned to the app. This is paid for out of the free renders, credit packs, or
 subscription you already have in Restyle &mdash; there&rsquo;s nothing extra to set up. Our backend does not
-store your photo: it&rsquo;s held in memory only long enough to generate that one design, then discarded.</p>
+store your photo: it&rsquo;s held in memory only long enough to generate that one design, then discarded.
+Images made with Google&rsquo;s model carry Google&rsquo;s invisible SynthID watermark, which identifies them as
+AI-generated; it contains no information about you.</p>
 <p>The first time the app contacts our backend, it also sends a one-time Google Play Integrity check
 &mdash; a token from Google Play services confirming the request comes from the genuine Restyle app
 installed from Google Play on a real device. Our backend passes it to Google to verify and uses the
@@ -143,17 +148,24 @@ backend entirely. Remove the token in Settings at any time to go back to Restyle
   <tr><th>Provider</th><th>What it receives</th><th>Purpose</th></tr>
   <tr>
     <td><strong>Restyle&rsquo;s own backend</strong> (and its hosting provider)</td>
-    <td>A room photo, style choice, text prompt, and your anonymous installation identifier &mdash; only
-    for a design you generate using Restyle&rsquo;s own AI service (the default cloud option). Also any
+    <td>A room photo, any sample photos you added, style choice, text prompt, and your anonymous
+    installation identifier &mdash; only for a design you generate using Restyle&rsquo;s own AI service (the
+    default cloud option). Also any
     report you choose to send about a design (no photo or image)</td>
     <td>Runs your AI redesign request, then forwards it to Replicate under Restyle&rsquo;s own account;
     stores reports so we can review flagged AI output</td>
   </tr>
   <tr>
     <td><strong>Replicate</strong></td>
-    <td>A room photo, style choice, and text prompt &mdash; either from Restyle&rsquo;s backend (default) or
-    directly from the app if you&rsquo;ve added your own Replicate token</td>
+    <td>A room photo, any sample photos you added, style choice, and text prompt &mdash; either from
+    Restyle&rsquo;s backend (default) or directly from the app if you&rsquo;ve added your own Replicate token</td>
     <td>AI image generation</td>
+  </tr>
+  <tr>
+    <td><strong>Google (Gemini image model, via Replicate)</strong></td>
+    <td>The same room photo, sample photos, style choice, and text prompt, passed on by Replicate when it
+    runs Google&rsquo;s model for a design made with Restyle&rsquo;s own AI service</td>
+    <td>AI image generation, under Google&rsquo;s own terms as the model provider</td>
   </tr>
   <tr>
     <td><strong>RevenueCat</strong></td>
@@ -192,8 +204,8 @@ it.</p>
       <td>Kept on your device until you delete a design in the app or uninstall Restyle</td></tr>
   <tr><td>Photos sent to Restyle&rsquo;s backend for its own AI service</td>
       <td>Not stored &mdash; held in memory only for the seconds it takes to generate that one design, then
-      discarded. Retention on Replicate&rsquo;s side (which our backend forwards to) is governed by
-      Replicate&rsquo;s own policy</td></tr>
+      discarded. Retention on Replicate&rsquo;s side (which our backend forwards to) and by Google as
+      the model provider is governed by their own policies</td></tr>
   <tr><td>Photos sent directly to Replicate (your own token)</td>
       <td>Not retained by us at all &mdash; retention on Replicate&rsquo;s side is governed by Replicate&rsquo;s own
       policy, not ours</td></tr>
@@ -234,7 +246,8 @@ collect anything from a child in the first place.</p>
 
 <h2>7. International users</h2>
 <p>We operate from the United States. If you use cloud rendering, your photo is processed by our
-backend and/or Replicate&rsquo;s infrastructure, which may be located outside your country. If you use
+backend and/or Replicate&rsquo;s and Google&rsquo;s infrastructure, which may be located outside your
+country. If you use
 Restyle from outside the US, be aware that data you choose to send off-device may be processed in the
 US or elsewhere, where data protection law may differ from your own.</p>
 
