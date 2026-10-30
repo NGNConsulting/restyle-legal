@@ -38,7 +38,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Restyle: Interior Design Shop &middot; Last updated 6 October 2026</p>
+<p class="meta">Restyle: Interior Design Shop &middot; Last updated 30 October 2026</p>
 
 <p>Restyle (&ldquo;the app&rdquo;) is operated by <strong>NGN Consulting Corp.</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy
 explains what we collect, why, who we share it with, and how long we keep it, in plain language.</p>
@@ -118,7 +118,9 @@ text you typed, any sample photos you added (flooring, window treatment, or rug)
 installation identifier are sent to our backend, which generates the redesign using Replicate, an AI
 hosting service, under Restyle&rsquo;s own account &mdash; not yours. Replicate runs the AI image model, which is
 currently <strong>Google&rsquo;s Gemini image model</strong>, so Google also processes that photo, your sample
-photos, and your design instructions to create the image. The finished image is returned to the app. This is paid for out of the free renders, credit packs, or
+photos, and your design instructions to create the image. If Google&rsquo;s model can&rsquo;t create a design from
+a particular photo, the backend makes it with <strong>Black Forest Labs&rsquo; FLUX Kontext model</strong> instead,
+so in that case Black Forest Labs processes the photo and your design instructions in the same way. The finished image is returned to the app. This is paid for out of the free renders, credit packs, or
 subscription you already have in Restyle &mdash; there&rsquo;s nothing extra to set up. Our backend does not
 store your photo: it&rsquo;s held in memory only long enough to generate that one design, then discarded.
 Images made with Google&rsquo;s model carry Google&rsquo;s invisible SynthID watermark, which identifies them as
