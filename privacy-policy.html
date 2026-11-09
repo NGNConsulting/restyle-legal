@@ -124,7 +124,9 @@ installation identifier are sent to our backend, which generates the redesign us
 hosting service, under Restyle&rsquo;s own account &mdash; not yours. Replicate runs the AI image model, which is
 currently <strong>Google&rsquo;s Gemini image model</strong>, so Google also processes that photo, your sample
 photos, and your design instructions to create the image, and to check that the finished design kept
-your room&rsquo;s walls, windows, and doors (if it didn&rsquo;t, the design is made once more). If Google&rsquo;s model can&rsquo;t create a design from
+your room&rsquo;s walls, windows, and doors (if it didn&rsquo;t, the design is made again). If Google&rsquo;s image
+model declines a photo, Google&rsquo;s model also sorts it into one general type, such as room or outdoor scene, and
+we log only that word so we can fix the problem. If Google&rsquo;s model can&rsquo;t create a design from
 a particular photo, the backend makes it with <strong>Black Forest Labs&rsquo; FLUX Kontext model</strong> instead,
 so in that case Black Forest Labs processes the photo and your design instructions in the same way. The finished image is returned to the app. This is paid for out of the free renders, credit packs, or
 subscription you already have in Restyle &mdash; there&rsquo;s nothing extra to set up. Our backend does not
